@@ -1,16 +1,19 @@
 function insertionSort(arr) {
-  for (let i = 1; i < arr.length; i++) {
+  const array = arr.slice();
+  for (let i = 1; i < array.length; i++) {
     for (let k = i; k > 0; k--) {
-      if (arr[k] < arr[k - 1]) {
-        const tempo = arr[k];
-        arr[k] = arr[k - 1];
-        arr[k - 1] = tempo;
+      if (array[k] < array[k - 1]) {
+        //const tempo = array[k];
+        //array[k] = array[k - 1];
+        //array[k - 1] = tempo;
+        [array[k], array[k - 1]] = [array[k - 1], array[k]];
       } else {
         break;
       }
     }
   }
   console.log(arr);
+  console.log(array);
   return arr;
 }
 
