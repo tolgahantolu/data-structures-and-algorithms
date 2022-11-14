@@ -1,19 +1,23 @@
 function selectionSort(arr) {
-  for (let i = 0; i < arr.length - 1; i++) {
+  const array = arr.slice();
+
+  for (let i = 0; i < array.length - 1; i++) {
     let min = i; //assume
-    for (let k = i + 1; k < arr.length; k++) {
-      if (arr[k] < arr[min]) {
+    for (let k = i + 1; k < array.length; k++) {
+      if (array[k] < array[min]) {
         min = k;
       }
     }
+    //const temp = array[i];
+    //array[i] = array[min];
+    //array[min] = temp;
 
-    const temp = arr[i];
-    arr[i] = arr[min];
-    arr[min] = temp;
+    [array[i], array[min]] = [array[min], array[i]];
   }
 
   console.log(arr);
-  return arr;
+  console.log(array);
+  return array;
 }
 
 selectionSort([84, 11, 41, 27, 44, 23, 10, 98, 47, 27, 4]);

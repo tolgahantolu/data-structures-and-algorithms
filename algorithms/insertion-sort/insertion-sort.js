@@ -14,7 +14,7 @@ function insertionSort(arr) {
   }
   console.log(arr);
   console.log(array);
-  return arr;
+  return array;
 }
 
 insertionSort([65, 27, 13, 23, 10]);
